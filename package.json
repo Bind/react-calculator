@@ -1,0 +1,39 @@
+{
+  "name": "react-calculator",
+  "version": "1.0.0",
+  "description": "demo application for chronicled",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bind/react-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bind/react-calculator/issues"
+  },
+  "homepage": "https://github.com/Bind/react-calculator#readme",
+  "dependencies": {
+    "react": "^0.13.3",
+    "body-parser": "^1.12.0",
+    "colors": "^1.0.3",
+    "dateformat": "^1.0.11",
+    "express": "^4.12.0",
+    "gulp-util": "^3.0.4",
+    "reactify": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-minify-css": "^0.4.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "jest-cli": "^0.5.5"
+  }
+}
