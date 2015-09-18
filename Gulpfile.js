@@ -25,7 +25,7 @@ gulp.task("lint", function(){
 
 
 gulp.task('browserify', function(){
-  gulp.src('src/js/components/NoteApp.jsx')
+  gulp.src('src/js/entry.js')
   .pipe(browserify({transform: 'reactify'}))
   .pipe(concat('main.js'))
   .pipe(gulp.dest('dist/js'))
