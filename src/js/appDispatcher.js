@@ -1,14 +1,11 @@
-var dispatcher = require("./dispatcher");
+var dispatcher = require("flux/lib/Dispatcher");
 var assign = require("object-assign");
 
-var appDispatcher = assign({}, dispatcher.prototype, {
 
-    handleViewAction:function(action){
-        this.dispatch({
-            source:"VIEW_ACTION",
-            action:action
-        })
+var appDispatcher = new dispatcher;
+appDispatcher.handleViewAction = function(action){
+        this.dispatch(
+           action
+        )
     }
-})
-
 module.exports = appDispatcher;
