@@ -1,0 +1,31 @@
+.keyboardDisplay{
+    text-align:right;
+    width: 6em;
+    font-size: 2em;
+    margin: 0;
+    padding: 6px;
+}
+.keyboardInputs{
+    vertical-align:top;
+    width: 9em;
+    display:inline-block;
+}
+.operandInputs{
+    width: 3em;
+    height: 12em;
+    display:inline-block;
+    box-sizing: border-box;
+    border: 1px solid orange;
+}   
+.numberInput{
+    display:inline-block;
+    background-color:orange;
+    color:white;
+    height: 3em;
+    width: 3em;
+    text-align: center;
+    line-height: 3em;
+    box-sizing: border-box;
+    border: 1px solid aliceblue;
+
+}
