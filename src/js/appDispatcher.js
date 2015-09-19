@@ -1,5 +1,5 @@
 var dispatcher = require("./dispatcher");
-var assign = require("objcet-assign");
+var assign = require("object-assign");
 
 var appDispatcher = assign({}, dispatcher.prototype, {
 
@@ -11,4 +11,4 @@ var appDispatcher = assign({}, dispatcher.prototype, {
     }
 })
 
-moduel.exports = appDispatcher;
+module.exports = appDispatcher;

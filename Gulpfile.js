@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     fs = require('fs'),
     gutil = require("gulp-util"),
     colors = require("colors"),
-    jshint = require("gulp-jshint")
+    jshint = require("gulp-jshint"),
+    reactify = require("reactify"),
+    babel = require("babelify")
 
 
 gutil.log = require("./bin/log")
@@ -26,7 +28,8 @@ gulp.task("lint", function(){
 
 gulp.task('browserify', function(){
   gulp.src('src/js/entry.js')
-  .pipe(browserify({transform: 'reactify'}))
+  // .pipe(browserify({transform:babel}))
+  .pipe(browserify({transform: reactify}))
   .pipe(concat('main.js'))
   .pipe(gulp.dest('dist/js'))
 
@@ -51,7 +54,7 @@ gulp.task('styles', function(){
 gulp.task('watch', function(){
 gulp.watch('src/sass/*.scss', ['styles']);
 gulp.watch('src/*.html', ['copy'])
-gulp.watch("src/js/*/*.*", ['browserify'])
+gulp.watch("src/js/*", ['browserify'])
 gulp.watch("server.js", ['restart'])
 gulp.watch("routers/*.js", ['restart'])
     })
@@ -71,7 +74,11 @@ gulp.task('restart', function(){
   gutil.log("server restarted!".red)
 })
 
+gulp.task("build",["copy", "browserify", "styles","server","watch"], function(){
+  })
+
 gulp.task('default', ['styles','server', 'watch'], function() {
   // place code for your default task here
 });
+
 
