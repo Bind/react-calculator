@@ -1,4 +1,11 @@
-##Pre-Build
+##To Build
+git clone
+npm install 
+run $"gulp"
+visit localhost:8080
+
+
+##Pre-Build Thoughts
 
 ####The Display
 the display will show the number closest to the top of the stack(shouldn't ever be two below) or the number currently being composed. 

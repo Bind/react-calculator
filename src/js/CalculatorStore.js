@@ -6,7 +6,9 @@ var constants = require("./CalculatorConstants");
 
 var currentDisplay = [];//NUmber being composed
 var operationStack = [];
+var justSet = false;
 /*
+
 a stack will be built up until a user hits enter.
 The stack will consist of either numbers or operations.
 ("+", "-","*","/","%") or '.',0,1,2,3,4,5,6,7,8,9]
@@ -33,7 +35,13 @@ class calculatorStore extends fluxStore {
         delete operationStack[operationStack.length-1]
     }
     pushDigit(number){
-        currentDisplay.push(number)
+        if (!justSet){
+            currentDisplay.push(number)
+        } else {
+            this.clearDisplay()
+            currentDisplay.push(number)
+            justSet = false;
+        }
     }
     executeOperandStack(){
         console.log(operationStack)
@@ -92,6 +100,8 @@ class calculatorStore extends fluxStore {
                 this.clearDisplay()
                 this.pushDigit(result)
                 this.__emitChange();
+                justSet = true;
+
                 //evalue the stacks
                 break;
 
